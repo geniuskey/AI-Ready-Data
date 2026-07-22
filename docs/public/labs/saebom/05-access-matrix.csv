@@ -1,0 +1,7 @@
+role,mail_shared,edm_internal,edm_restricted,alarm_history,ai_search,notes
+A공장_설비담당,read,read,deny,read,allow,제한 문서 제목·스니펫·캐시도 비노출
+정비기술,read,edit,deny,read,allow,절차 소유·개정
+품질문서,read,approve,deny,read,allow,문서 상태·효력 승인
+안전검토자,read,read,read,read,allow,제한 문서 접근 가능
+AI_수집서비스,read,read,deny,read,service,원본 ACL보다 넓은 권한 금지
+AI_운영자,metadata,metadata,metadata,metadata,operate,업무 내용 열람은 별도 승인

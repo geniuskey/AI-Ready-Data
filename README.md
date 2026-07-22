@@ -22,15 +22,18 @@ npm run docs:dev
 - `docs/`: 위키의 유일한 콘텐츠 원본(SSoT)
 - `docs/.vitepress/`: 내비게이션·테마·Vue 시각화와 렌더링 설정
 - `docs/public/downloads/`: 사용자가 내려받는 CSV 템플릿과 레퍼런스 카탈로그
+- `docs/public/labs/`: 완전 합성 데이터 실습 원천·산출물·오프라인 ZIP
 - `package.json`·`package-lock.json`: Node.js 의존성과 재현 가능한 잠금 파일
 - `scripts/validate-docs.mjs`: 문서 계약·링크·사례 표시·민감정보 검사
 - `.github/workflows/pages.yml`: 검증, VitePress 빌드, GitHub Pages 배포
 
-레퍼런스 탐색기, 준비도 진단과 경영효과 계산기는 Vue 컴포넌트이며 입력값을 외부로
-전송하지 않습니다. 문서 페이지와 검색 인덱스는 정적 파일로 생성됩니다.
+레퍼런스 탐색기, 준비도 진단, 경영효과 계산기와 실행 워크벤치는 Vue 컴포넌트이며
+입력값을 외부로 전송하지 않습니다. 문서 페이지와 검색 인덱스는 정적 파일로
+생성됩니다. 완전 합성 데이터 실습 팩과 16장 웹 세미나 슬라이드도 함께 제공합니다.
 
-문서의 추천 학습 경로는 **정의 → 두 축 준비도 진단 → Data Ready → Knowledge
-Ready → AI 활용·운영 → 경영효과**입니다. 거버넌스와 보안은 모든 단계에 적용합니다.
+문서의 추천 학습 경로는 **실행 워크벤치 → Data Ready → Knowledge Ready → 합성
+데이터 실습 → AI 활용·운영 → 경영효과 → 세미나**입니다. 거버넌스와 보안은 모든
+단계에 적용합니다.
 급한 문제가 있다면
 사이트 검색이나 원천별 플레이북에서 바로 시작해도 됩니다.
 

@@ -1,0 +1,7 @@
+record_id,equipment,alarm_code,occurred_at,temperature,temperature_unit,action,result,source_message_id
+R-001,P-101A,TEMP-HI,2026-06-28 08:10,82.4,C,필터 확인,정상,<sb-20260628-001@example.invalid>
+R-002,P101-A,TEMP HIGH,2026/06/29 14:22,181.4,F,필터 확인 후 재기동,정상,<sb-20260629-002@example.invalid>
+R-003,pump101a,T-HI,07-01-2026 08:31,83,섭씨,필터 확인,정상,<sb-20260701-001@example.invalid>
+R-003,P-101A,TEMP-HI,2026-07-01 08:31,83,C,필터 확인,정상,<sb-20260701-001@example.invalid>
+R-004,P-101B,TEMP-HI,2026-07-01 09:02,,C,미기록,확인중,<sb-20260701-004@example.invalid>
+R-005,P-101A,TEMP-HI,2026-07-02 11:05,999,C,센서 확인,입력오류,<sb-20260702-003@example.invalid>

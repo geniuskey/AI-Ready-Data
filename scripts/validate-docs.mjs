@@ -42,7 +42,23 @@ const coreDocs = new Set([
   'data-ready/index.md',
   'knowledge-ready/index.md',
   'knowledge-ready/knowledge-units.md',
-  'ai-use/index.md'
+  'ai-use/index.md',
+  'workbench/index.md',
+  'practice/index.md',
+  'seminar/index.md'
+])
+const labFiles = new Set([
+  '00-README.txt',
+  '01-mail-thread.txt',
+  '02-edm-register.csv',
+  '03-alarm-history.csv',
+  '04-meeting-notes.txt',
+  '05-access-matrix.csv',
+  '10-source-inventory-empty.csv',
+  '11-knowledge-register-empty.csv',
+  '12-golden-set-empty.csv',
+  '90-knowledge-register-example.csv',
+  '91-golden-set-example.csv'
 ])
 const linkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g
 const secretPatterns = new Map([
@@ -157,6 +173,54 @@ function validateGlossary(errors) {
   return rows.length
 }
 
+function validateLabPack(errors) {
+  const labRoot = path.join(docsRoot, 'public', 'labs', 'saebom')
+  for (const fileName of labFiles) {
+    const file = path.join(labRoot, fileName)
+    if (!fs.existsSync(file)) {
+      errors.push(`실습 팩 파일 누락: ${fileName}`)
+      continue
+    }
+    if (fs.statSync(file).size === 0) errors.push(`실습 팩 파일이 비어 있음: ${fileName}`)
+    const fileContents = fs.readFileSync(file, 'utf8')
+    for (const [label, pattern] of secretPatterns) {
+      if (pattern.test(fileContents)) errors.push(`실습 팩 ${fileName}: 잠재적 비밀정보 발견(${label})`)
+    }
+    if (fileName.endsWith('.csv')) {
+      try {
+        const rows = parseCsv(fileContents, {
+          columns: true,
+          bom: true,
+          relax_column_count: false,
+          skip_empty_lines: true
+        })
+        if (!rows.length) errors.push(`실습 팩 CSV에 데이터 행이 없음: ${fileName}`)
+      } catch (error) {
+        errors.push(`실습 팩 CSV 파싱 실패(${fileName}): ${error.message}`)
+      }
+    }
+  }
+
+  const readme = path.join(labRoot, '00-README.txt')
+  if (fs.existsSync(readme) && !fs.readFileSync(readme, 'utf8').includes('합성 정보')) {
+    errors.push('실습 팩 안내문에 합성 데이터 표시가 없습니다')
+  }
+
+  const archive = path.join(docsRoot, 'public', 'labs', 'saebom-ai-ready-lab.zip')
+  if (!fs.existsSync(archive)) {
+    errors.push('실습 팩 ZIP 누락: saebom-ai-ready-lab.zip')
+  } else {
+    const contents = fs.readFileSync(archive)
+    if (contents.length < 1000 || contents.subarray(0, 2).toString('ascii') !== 'PK') {
+      errors.push('실습 팩 ZIP이 비어 있거나 올바른 ZIP 형식이 아닙니다')
+    }
+    for (const fileName of labFiles) {
+      if (!contents.includes(Buffer.from(fileName))) errors.push(`실습 팩 ZIP 내부 파일 누락: ${fileName}`)
+    }
+  }
+  return labFiles.size
+}
+
 function main() {
   const errors = []
   const markdownFiles = walkMarkdown(docsRoot).sort()
@@ -229,6 +293,7 @@ function main() {
   if (cases.length !== 4) errors.push(`MVP: 상세 사례는 4개여야 합니다(현재 ${cases.length}개)`)
   const referenceCount = validateReferenceCatalog(errors)
   const glossaryCount = validateGlossary(errors)
+  const labFileCount = validateLabPack(errors)
 
   if (errors.length) {
     console.error('Documentation validation failed:')
@@ -238,7 +303,7 @@ function main() {
   console.log(
     `Documentation validation passed: ${markdownFiles.length} Markdown files, ` +
       `${coreDocs.size} core guides, ${templates.length} templates, ${cases.length} cases, ` +
-      `${referenceCount} references, ${glossaryCount} glossary terms`
+      `${referenceCount} references, ${glossaryCount} glossary terms, ${labFileCount} lab files`
   )
   return 0
 }

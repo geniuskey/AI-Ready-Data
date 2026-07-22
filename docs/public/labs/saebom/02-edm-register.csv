@@ -1,0 +1,8 @@
+document_id,title,version,status,effective_date,owner,applies_to,replaces,classification,path,note
+WI-P101-05,P-101 반복 경보 점검 절차,2,approved,2025-11-01,정비기술팀,P-101B,,internal,/approved/WI-P101-05_v2.pdf,P-101B 임시 참고 여부는 실행 전 승인 필요
+WI-P101-05,P-101 반복 경보 점검 절차,3,draft,,정비기술팀,P-101A|P-101B,WI-P101-05 v2,internal,/draft/WI-P101-05_v3_draft.docx,승인 전 초안
+WI-P101-07,P-101A TEMP-HI 확인 절차,3,approved,2026-06-15,정비기술팀,P-101A,WI-P101-03 v1,internal,/approved/WI-P101-07_v3.pdf,현재 승인본
+WI-P101-07,P-101A TEMP-HI 확인 절차,2,obsolete,2026-01-10,정비기술팀,P-101A,,internal,/archive/WI-P101-07_v2.pdf,v3로 대체됨
+WI-P101-07,P101 점검 최종,unknown,unknown,,unknown,unknown,,internal,/personal/P101_최종_스캔.pdf,개인 복사본이며 OCR 필요
+WI-P101-SEC-02,P-101 안전 인터록 검토 기준,1,approved,2026-05-20,안전기술팀,P-101A|P-101B,,restricted,/restricted/WI-P101-SEC-02_v1.pdf,안전검토자 그룹 전용
+LOG-P101-20260701,P-101A 경보 조치 로그,1,reviewed,2026-07-02,설비운영팀,P-101A,,internal,/logs/LOG-P101-20260701.xlsx,사실 기록이며 작업 절차가 아님
