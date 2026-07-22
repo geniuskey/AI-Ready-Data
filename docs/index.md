@@ -18,7 +18,8 @@ review_due: 2027-01-22
   </h1>
   <p>Data Ready와 Knowledge Ready, 두 준비축으로 시작하는 안전한 AI 전환</p>
   <div class="hero-actions">
-    <a class="md-button md-button--primary" href="01-assess/readiness/">준비도 진단 시작</a>
+    <a class="md-button md-button--primary" href="workbench/">내 90일 실행안 만들기</a>
+    <a class="md-button" href="01-assess/readiness/">준비도 진단</a>
     <a class="md-button" href="#ai-ready는-두-준비가-만나는-상태">전체 지도 보기</a>
   </div>
 </div>
@@ -99,6 +100,14 @@ Data Ready만으로는 낡은 규정이나 잘못된 약어를 골라낼 수 없
 <div class="stop-card">
   <strong>🛑 Data Ready 또는 Knowledge Ready 게이트가 막히면 AI 파일럿으로 넘기지 않습니다.</strong>
   <a href="templates/readiness-assessment/">진단표 열기 →</a>
+</div>
+
+## 혼자 읽지 말고 함께 실행하세요
+
+<div class="route-grid">
+  <a class="route-card" href="workbench/"><span>◎</span><strong>15분 실행 워크벤치</strong><small>우리 조직의 상위 세 과제와 90일 순서를 만든다</small></a>
+  <a class="route-card" href="practice/"><span>▣</span><strong>75분 합성 데이터 실습</strong><small>메일·EDM·Excel에서 승인 지식과 골든셋을 만든다</small></a>
+  <a class="route-card" href="seminar/"><span>▶</span><strong>60–90분 세미나</strong><small>16장 웹 슬라이드와 발표자 노트로 설명한다</small></a>
 </div>
 
 <div class="quiet-link">낯선 약어가 보이면 <a href="reference/glossary/">용어사전</a>에서 쉬운 설명을 찾으세요. · 개념부터 확인하려면 <a href="00-start/what-is-ai-ready-data/">AI-Ready Data의 정의와 원칙</a>을 읽으세요. · 기준: <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF</a></div>

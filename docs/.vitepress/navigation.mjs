@@ -1,9 +1,17 @@
 export const nav = [
   { text: '시작', link: '/' },
+  { text: '실행 워크벤치', link: '/workbench/' },
   { text: '진단·로드맵', link: '/01-assess/readiness' },
   { text: 'Data Ready', link: '/data-ready/' },
   { text: 'Knowledge Ready', link: '/knowledge-ready/' },
   { text: 'AI 활용', link: '/ai-use/' },
+  {
+    text: '실습·세미나',
+    items: [
+      { text: '75분 종단간 실습', link: '/practice/' },
+      { text: '세미나 슬라이드', link: '/seminar/' }
+    ]
+  },
   { text: '사례', link: '/06-cases/' },
   {
     text: '자료',
@@ -28,6 +36,7 @@ export const sidebar = [
     text: '진단과 90일 실행',
     collapsed: false,
     items: [
+      { text: '실행 워크벤치', link: '/workbench/' },
       { text: '두 축 준비도 진단', link: '/01-assess/readiness' },
       { text: '경영효과 측정', link: '/01-assess/business-impact' },
       { text: '90일 로드맵', link: '/01-assess/90-day-roadmap' }
@@ -79,6 +88,14 @@ export const sidebar = [
       { text: 'Siemens 분산 검색', link: '/06-cases/siemens' },
       { text: '국내 공공 AI 실증', link: '/06-cases/nia-public-ai' },
       { text: '한빛제조 90일 전환', link: '/06-cases/hanbit-manufacturing' }
+    ]
+  },
+  {
+    text: '실습과 발표',
+    collapsed: false,
+    items: [
+      { text: '75분 종단간 실습', link: '/practice/' },
+      { text: '세미나 슬라이드', link: '/seminar/' }
     ]
   },
   {

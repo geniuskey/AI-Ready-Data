@@ -1,0 +1,6 @@
+knowledge_id,type,statement,subject,condition,status,effective_from,effective_to,source_id,source_location,approver,review_due,conflict_with,notes
+K-001,procedure,"P-101A TEMP-HI 확인에는 WI-P101-07 v3를 사용한다",P-101A,TEMP-HI,approved,2026-06-15,,WI-P101-07 v3,"EDM register row 3; mail <sb-20260701-002@example.invalid>",현업 소유자 확인 필요,2026-10-01,,EDM 승인 상태와 메일이 일치
+K-002,procedure,"P-101B는 WI-P101-05 v2를 참고하되 실행 전 정비팀장 승인이 필요하다",P-101B,TEMP-HI,candidate,2026-07-01,,WI-P101-05 v2,"mail <sb-20260701-003@example.invalid>",정비팀장 승인 필요,2026-08-01,K-003,회의록과 정식 결정 로그가 없어 게시 보류 가능
+K-003,procedure,"WI-P101-05 v3를 P-101A와 P-101B에 사용한다",P-101A|P-101B,TEMP-HI,rejected,,,WI-P101-05 v3 draft,EDM register row 2,정비기술팀,2026-08-01,K-002,초안이므로 근거 사용 금지
+K-004,access,"A공장 설비담당에게 제한 문서의 제목·스니펫·요약·캐시를 노출하지 않는다",AI 검색,사용자 역할=A공장_설비담당,approved,2026-07-02,,WI-P101-SEC-02,"mail <sb-20260702-001@example.invalid>; access matrix row 2",보안운영,2026-10-01,,ACL 시험 필요
+K-005,fact,"2026-07-01 08:31 P-101A에서 TEMP-HI가 발생했고 필터 확인 후 정상으로 기록됐다",P-101A,해당 사건에 한함,reviewed,2026-07-01,,LOG-P101-20260701,"alarm history R-003; mail <sb-20260701-001@example.invalid>",설비운영팀,2026-10-01,,절차가 아니라 사건 사실
