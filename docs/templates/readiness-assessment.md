@@ -12,7 +12,7 @@ review_due: 2027-01-22
 
 # 준비도 진단표 템플릿
 
-[CSV 내려받기](../assets/downloads/readiness-assessment.csv)
+[CSV 내려받기](../downloads/readiness-assessment.csv)
 
 ## 진단 머리말
 
@@ -44,4 +44,3 @@ review_due: 2027-01-22
 - 운영 게이트: `통과 / 조건부 / 중단`
 - 가장 중요한 중단 이유:
 - 승인자 / 승인일:
-

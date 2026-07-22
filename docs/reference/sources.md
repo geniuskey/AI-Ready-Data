@@ -27,7 +27,9 @@ review_due: 2026-10-22
 | 검색·인용·골든셋·RAG 평가 | [RAG·검색·평가](rag-evaluation.md) |
 | ROI·생산성·데이터 가치 | [경영효과·실증 근거](value-evidence.md) |
 
-[전체 레퍼런스 CSV 내려받기](../assets/downloads/reference-catalog.csv){ .md-button .md-button--primary }
+<a class="md-button md-button--primary" href="../downloads/reference-catalog.csv">전체 레퍼런스 CSV 내려받기</a>
+
+<ReferenceExplorer />
 
 ## 처음 읽을 12개
 

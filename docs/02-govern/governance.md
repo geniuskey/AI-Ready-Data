@@ -89,9 +89,10 @@ AI에 제공되는 원천 묶음마다 다음 한 장을 유지한다.
 [NARA Universal ERM Requirements](https://www.archives.gov/records-mgmt/policy/universalermrequirements)처럼,
 AI 색인은 기존 기록관리 정책을 상속해야 한다.
 
-!!! danger "복사본이 새 보존 의무를 만든다"
-    원본이 삭제됐는데 벡터 색인과 답변 캐시에 내용이 남으면 정책을 지킨 것이 아니다.
-    파생 저장소를 데이터 인벤토리와 삭제 절차에 포함한다.
+::: danger 복사본이 새 보존 의무를 만든다
+원본이 삭제됐는데 벡터 색인과 답변 캐시에 내용이 남으면 정책을 지킨 것이 아니다.
+파생 저장소를 데이터 인벤토리와 삭제 절차에 포함한다.
+:::
 
 ## 성공 지표
 

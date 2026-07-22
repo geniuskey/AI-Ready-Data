@@ -24,10 +24,9 @@ review_due: 2027-01-22
 - AI가 만든 초안도 사람이 출처와 의미를 확인한다.
 - 내부 링크, 모바일 표, 인쇄와 문서 검증을 통과한다.
 
-기여 전 `uv sync --locked` 후 다음 검증을 실행한다.
+기여 전 Node.js 22 이상에서 다음 검증을 실행한다.
 
 ```powershell
-uv run --locked python scripts/validate_docs.py
-uv run --locked pymarkdown --config .pymarkdown.json scan docs README.md CONTRIBUTING.md
-uv run --locked mkdocs build --strict
+npm ci
+npm run check
 ```

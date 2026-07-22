@@ -12,7 +12,7 @@ review_due: 2027-01-22
 
 # SSoT·충돌대장 템플릿
 
-[CSV 내려받기](../assets/downloads/ssot-register.csv)
+[CSV 내려받기](../downloads/ssot-register.csv)
 
 ## 권위 원천 등록
 
@@ -33,4 +33,3 @@ review_due: 2027-01-22
 - [ ] 폐기·대체 관계와 원문 링크를 양쪽 문서에 반영했다.
 - [ ] 미해결 충돌의 검색·답변 동작을 정했다.
 - [ ] 판정 변경이 청크·색인·캐시·골든셋에 전파된다.
-

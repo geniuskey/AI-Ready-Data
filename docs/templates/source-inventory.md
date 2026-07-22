@@ -12,7 +12,7 @@ review_due: 2027-01-22
 
 # 데이터 원천 인벤토리 템플릿
 
-[CSV 내려받기](../assets/downloads/source-inventory.csv)
+[CSV 내려받기](../downloads/source-inventory.csv)
 
 | 필드 | 작성 지침 |
 | --- | --- |
@@ -34,4 +34,3 @@ review_due: 2027-01-22
 | source_id | 이름 | 목적 | 소유자 | 등급 | ACL | 보존 | 형식·규모 | 갱신 | 품질 위험 | 상태 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |  |  |  |  |
-

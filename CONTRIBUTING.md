@@ -5,18 +5,15 @@
 
 ## 로컬 확인
 
-먼저 [공식 설치 가이드](https://docs.astral.sh/uv/getting-started/installation/)에 따라
-`uv`를 설치합니다. 저장소의 `.python-version`에 지정된 Python도 `uv`가 관리합니다.
+Node.js 22 이상을 설치한 뒤 저장소 루트에서 다음 명령을 실행합니다.
 
 ```powershell
-uv sync --locked
-uv run --locked python scripts/validate_docs.py
-uv run --locked pymarkdown --config .pymarkdown.json scan docs README.md CONTRIBUTING.md
-uv run --locked mkdocs build --strict
+npm ci
+npm run check
 ```
 
-Python 의존성을 바꿀 때는 `uv add <패키지>` 또는 `uv remove <패키지>`로
-`pyproject.toml`과 `uv.lock`을 함께 갱신합니다. 잠금 파일을 직접 편집하지 않습니다.
+의존성을 바꿀 때는 npm 명령으로 `package.json`과 `package-lock.json`을 함께
+갱신합니다. 잠금 파일을 직접 편집하지 않습니다.
 
 ## 문서 계약
 
@@ -37,7 +34,11 @@ review_due: YYYY-MM-DD
 ```
 
 사례 문서는 `case_type: verified-case | composite-case`와 같은 본문 배지를 추가합니다.
-새 문서는 `mkdocs.yml` 내비게이션에 반드시 연결합니다.
+새 문서는 `docs/.vitepress/navigation.mjs` 내비게이션에 반드시 연결합니다.
+
+긴 표나 반복 카드는 Vue 컴포넌트로 탐색성을 개선할 수 있습니다. 컴포넌트는
+`docs/.vitepress/theme/components/`에 두고, 외부 데이터 전송 없이 정적 빌드와
+서버 사이드 렌더링을 통과해야 합니다.
 
 ## 출처와 사례
 

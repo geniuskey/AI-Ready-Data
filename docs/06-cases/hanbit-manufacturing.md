@@ -15,9 +15,10 @@ review_due: 2027-01-22
 
 <span class="case-badge composite-case">composite-case · 가상 복합 사례</span>
 
-!!! warning "실제 회사가 아니다"
-    한빛제조, 인물, 문서, 수치와 성과는 여러 조직에서 흔히 볼 수 있는 문제를 설명하기
-    위해 만든 합성 예시다. 특정 회사의 실제 프로젝트나 보장된 성과가 아니다.
+::: warning 실제 회사가 아니다
+한빛제조, 인물, 문서, 수치와 성과는 여러 조직에서 흔히 볼 수 있는 문제를 설명하기
+위해 만든 합성 예시다. 특정 회사의 실제 프로젝트나 보장된 성과가 아니다.
+:::
 
 ## 출발점
 
@@ -112,4 +113,3 @@ review_due: 2027-01-22
 이 사례를 실행계획으로 바꾸려면 [90일 백로그·RACI](../templates/roadmap-raci.md),
 [데이터 원천 인벤토리](../templates/source-inventory.md),
 [RAG 골든셋](../templates/rag-golden-set.md)을 함께 사용한다.
-
