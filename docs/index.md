@@ -70,4 +70,4 @@ review_due: 2027-01-22
   <a href="templates/readiness-assessment/">진단표 열기 →</a>
 </div>
 
-<div class="quiet-link">개념부터 확인하려면 <a href="00-start/what-is-ai-ready-data/">AI-Ready Data의 정의와 원칙</a>을 읽으세요. · 기준: <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF</a></div>
+<div class="quiet-link">낯선 약어가 보이면 <a href="reference/glossary/">용어사전</a>에서 쉬운 설명을 찾으세요. · 개념부터 확인하려면 <a href="00-start/what-is-ai-ready-data/">AI-Ready Data의 정의와 원칙</a>을 읽으세요. · 기준: <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF</a></div>

@@ -8,6 +8,11 @@ const container = ref<HTMLElement>()
 const error = ref('')
 let sequence = 0
 
+function decodeBase64Utf8(value: string) {
+  const bytes = Uint8Array.from(window.atob(value), (character) => character.charCodeAt(0))
+  return new TextDecoder('utf-8').decode(bytes)
+}
+
 async function renderDiagram() {
   if (!container.value) return
   try {
@@ -18,7 +23,7 @@ async function renderDiagram() {
       theme: isDark.value ? 'dark' : 'neutral',
       fontFamily: 'Pretendard, Noto Sans KR, system-ui, sans-serif'
     })
-    const source = window.atob(props.code)
+    const source = decodeBase64Utf8(props.code)
     const id = `ard-mermaid-${Date.now()}-${sequence++}`
     const result = await mermaid.render(id, source)
     if (container.value) container.value.innerHTML = result.svg

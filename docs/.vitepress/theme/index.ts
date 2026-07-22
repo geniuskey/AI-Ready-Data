@@ -1,5 +1,6 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
+import GlossaryExplorer from './components/GlossaryExplorer.vue'
 import MermaidDiagram from './components/MermaidDiagram.vue'
 import ReadinessDashboard from './components/ReadinessDashboard.vue'
 import ReferenceExplorer from './components/ReferenceExplorer.vue'
@@ -9,6 +10,7 @@ import './style.css'
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
+    app.component('GlossaryExplorer', GlossaryExplorer)
     app.component('MermaidDiagram', MermaidDiagram)
     app.component('ReadinessDashboard', ReadinessDashboard)
     app.component('ReferenceExplorer', ReferenceExplorer)

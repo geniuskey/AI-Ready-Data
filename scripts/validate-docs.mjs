@@ -127,6 +127,31 @@ function validateReferenceCatalog(errors) {
   return rows.length
 }
 
+function validateGlossary(errors) {
+  const file = path.join(docsRoot, 'public', 'downloads', 'ai-ready-data-glossary.csv')
+  const rows = parseCsv(fs.readFileSync(file, 'utf8'), {
+    columns: true,
+    bom: true,
+    skip_empty_lines: true
+  })
+  const ids = new Set()
+  const terms = new Set()
+  const requiredFields = ['id', 'term', 'english', 'category', 'definition', 'why', 'aliases']
+  for (const [index, row] of rows.entries()) {
+    for (const field of requiredFields) {
+      if (!row[field]) errors.push(`ai-ready-data-glossary.csv:${index + 2}: ${field} 누락`)
+    }
+    if (ids.has(row.id)) errors.push(`ai-ready-data-glossary.csv:${index + 2}: 중복 ID ${row.id}`)
+    if (terms.has(row.term)) errors.push(`ai-ready-data-glossary.csv:${index + 2}: 중복 용어 ${row.term}`)
+    ids.add(row.id)
+    terms.add(row.term)
+  }
+  if (rows.length < 70) {
+    errors.push(`ai-ready-data-glossary.csv: 용어가 70개 미만입니다(현재 ${rows.length}개)`)
+  }
+  return rows.length
+}
+
 function main() {
   const errors = []
   const markdownFiles = walkMarkdown(docsRoot).sort()
@@ -198,6 +223,7 @@ function main() {
   if (templates.length !== 12) errors.push(`MVP: 실전 템플릿은 12개여야 합니다(현재 ${templates.length}개)`)
   if (cases.length !== 4) errors.push(`MVP: 상세 사례는 4개여야 합니다(현재 ${cases.length}개)`)
   const referenceCount = validateReferenceCatalog(errors)
+  const glossaryCount = validateGlossary(errors)
 
   if (errors.length) {
     console.error('Documentation validation failed:')
@@ -207,7 +233,7 @@ function main() {
   console.log(
     `Documentation validation passed: ${markdownFiles.length} Markdown files, ` +
       `${coreDocs.size} core guides, ${templates.length} templates, ${cases.length} cases, ` +
-      `${referenceCount} references`
+      `${referenceCount} references, ${glossaryCount} glossary terms`
   )
   return 0
 }

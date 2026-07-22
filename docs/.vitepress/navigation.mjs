@@ -3,6 +3,7 @@ export const nav = [
   { text: '진단과 실행', link: '/01-assess/readiness' },
   { text: '가이드', link: '/02-govern/governance' },
   { text: '사례', link: '/06-cases/' },
+  { text: '용어사전', link: '/reference/glossary' },
   { text: '템플릿', link: '/templates/' },
   { text: '근거', link: '/reference/sources' }
 ]
@@ -92,7 +93,7 @@ export const sidebar = [
     collapsed: true,
     items: [
       { text: '참조 아키텍처', link: '/reference/architectures' },
-      { text: '용어집', link: '/reference/glossary' },
+      { text: '용어사전', link: '/reference/glossary' },
       { text: '근거·참고문헌', link: '/reference/sources' },
       { text: '표준·품질·거버넌스', link: '/reference/standards-governance' },
       { text: '보안·개인정보', link: '/reference/security-privacy' },
