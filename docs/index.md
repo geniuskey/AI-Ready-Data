@@ -6,7 +6,7 @@ page_type: guide
 audience: [현업 리더, IT·데이터 담당자, AX 추진자]
 maturity_level: [0, 1]
 topics: [AI-Ready Data, 시작하기, 자가진단]
-last_updated: 2026-07-22
+last_updated: 2026-07-23
 review_due: 2027-01-22
 ---
 
@@ -23,6 +23,11 @@ review_due: 2027-01-22
     <a class="md-button" href="#ai-ready는-두-준비가-만나는-상태">전체 지도 보기</a>
   </div>
 </div>
+
+<figure class="guide-illustration guide-illustration-hero">
+  <img :src="'/AI-Ready-Data/images/illustrations/ai-ready-journey.webp'" width="1200" height="676" loading="eager" fetchpriority="high" decoding="async" alt="메일, 문서, 표와 회의 기록이 필터링·정리·승인·보안 단계를 거쳐 근거 카드와 AI 서비스로 연결되는 개념 삽화">
+  <figcaption>흩어진 원천을 곧바로 AI에 넣지 않고, 읽기·통제·사람 승인 게이트를 거쳐 근거로 바꾼다.</figcaption>
+</figure>
 
 ## AI-Ready는 두 준비가 만나는 상태
 

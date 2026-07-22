@@ -463,6 +463,36 @@
   padding-left: 0.8rem;
 }
 
+.guide-illustration {
+  background: var(--ard-navy);
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 28%, var(--vp-c-divider));
+  border-radius: 0.9rem;
+  box-shadow: 0 0.6rem 1.8rem rgb(17 26 58 / 10%);
+  margin: 1.35rem 0 2rem;
+  overflow: hidden;
+}
+
+.guide-illustration img {
+  aspect-ratio: 1200 / 676;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.guide-illustration figcaption {
+  background: color-mix(in srgb, var(--ard-navy) 92%, var(--ard-teal));
+  color: rgb(255 255 255 / 82%);
+  font-size: 0.74rem;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+}
+
+.guide-illustration-hero {
+  margin-top: -0.35rem;
+}
+
 .mermaid-frame {
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);

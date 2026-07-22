@@ -60,6 +60,13 @@ const labFiles = new Set([
   '90-knowledge-register-example.csv',
   '91-golden-set-example.csv'
 ])
+const illustrationFiles = new Map([
+  ['ai-ready-journey.webp', 'index.md'],
+  ['data-ready-pipeline.webp', 'data-ready/index.md'],
+  ['knowledge-ready-review.webp', 'knowledge-ready/index.md'],
+  ['on-prem-security.webp', '02-govern/security.md'],
+  ['ai-ready-workshop.webp', 'practice/index.md']
+])
 const linkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g
 const secretPatterns = new Map([
   ['AWS access key', /\bAKIA[0-9A-Z]{16}\b/],
@@ -221,6 +228,29 @@ function validateLabPack(errors) {
   return labFiles.size
 }
 
+function validateIllustrations(errors) {
+  const illustrationRoot = path.join(docsRoot, 'public', 'images', 'illustrations')
+  for (const [fileName, documentName] of illustrationFiles) {
+    const file = path.join(illustrationRoot, fileName)
+    if (!fs.existsSync(file)) {
+      errors.push(`삽화 파일 누락: ${fileName}`)
+      continue
+    }
+    const contents = fs.readFileSync(file)
+    if (contents.length < 20000 || contents.length > 250000) {
+      errors.push(`삽화 파일 크기 범위 위반: ${fileName} (${contents.length} bytes)`)
+    }
+    if (contents.subarray(0, 4).toString('ascii') !== 'RIFF' || contents.subarray(8, 12).toString('ascii') !== 'WEBP') {
+      errors.push(`삽화가 올바른 WebP 형식이 아님: ${fileName}`)
+    }
+    const documentPath = path.join(docsRoot, documentName)
+    if (!fs.existsSync(documentPath) || !fs.readFileSync(documentPath, 'utf8').includes(fileName)) {
+      errors.push(`삽화를 사용하는 문서 연결 누락: ${fileName} -> ${documentName}`)
+    }
+  }
+  return illustrationFiles.size
+}
+
 function main() {
   const errors = []
   const markdownFiles = walkMarkdown(docsRoot).sort()
@@ -294,6 +324,7 @@ function main() {
   const referenceCount = validateReferenceCatalog(errors)
   const glossaryCount = validateGlossary(errors)
   const labFileCount = validateLabPack(errors)
+  const illustrationCount = validateIllustrations(errors)
 
   if (errors.length) {
     console.error('Documentation validation failed:')
@@ -303,7 +334,8 @@ function main() {
   console.log(
     `Documentation validation passed: ${markdownFiles.length} Markdown files, ` +
       `${coreDocs.size} core guides, ${templates.length} templates, ${cases.length} cases, ` +
-      `${referenceCount} references, ${glossaryCount} glossary terms, ${labFileCount} lab files`
+      `${referenceCount} references, ${glossaryCount} glossary terms, ${labFileCount} lab files, ` +
+      `${illustrationCount} illustrations`
   )
   return 0
 }

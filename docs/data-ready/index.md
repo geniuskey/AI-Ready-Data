@@ -6,7 +6,7 @@ page_type: guide
 audience: [현업 소유자, 데이터 스튜어드, IT·데이터 담당자, 보안 담당자]
 maturity_level: [0, 1, 2, 3, 4]
 topics: [Data Ready, 원천, 품질, 메타데이터, 계보]
-last_updated: 2026-07-22
+last_updated: 2026-07-23
 review_due: 2027-01-22
 ---
 
@@ -20,6 +20,11 @@ Data Ready는 파일을 한곳에 모으거나 형식을 바꾸는 일이 아니
 같은 원천을 다시 처리해도 누가 어떤 버전을 어떤 권한으로 변환했는지 설명하고 결과를
 재현할 수 있다.
 :::
+
+<figure class="guide-illustration">
+  <img :src="'/AI-Ready-Data/images/illustrations/data-ready-pipeline.webp'" width="1200" height="676" loading="lazy" decoding="async" alt="여러 형식의 레거시 파일이 사내 처리 구역에서 추출·품질검사·메타데이터·계보·권한 단계를 거쳐 구조화되는 개념 삽화">
+  <figcaption>Data Ready는 변환 한 번이 아니라 원천에서 구조화 데이터까지 품질·권한·계보를 잇는 운영 상태다.</figcaption>
+</figure>
 
 ## 네 가지 준비축
 
