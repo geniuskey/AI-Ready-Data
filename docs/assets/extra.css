@@ -1,0 +1,112 @@
+:root {
+  --ard-navy: #111a3a;
+  --ard-indigo: #4051b5;
+  --ard-teal: #00a896;
+  --ard-amber: #f5a623;
+  --ard-paper: #f6f8fc;
+}
+
+body {
+  font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+}
+
+.md-typeset h1 {
+  color: var(--ard-navy);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #f3f6ff;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid color-mix(in srgb, var(--ard-indigo) 20%, transparent);
+  padding-bottom: 0.3rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--ard-navy), #263f88 58%, #087f78);
+  border-radius: 1rem;
+  color: white;
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  padding: clamp(1.6rem, 5vw, 3.8rem);
+  position: relative;
+}
+
+.hero::after {
+  background: radial-gradient(circle, rgb(255 255 255 / 16%), transparent 66%);
+  content: "";
+  height: 24rem;
+  position: absolute;
+  right: -8rem;
+  top: -10rem;
+  width: 24rem;
+}
+
+.hero h1,
+.hero p {
+  color: white;
+  max-width: 48rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 { margin: 0 0 0.7rem; }
+.hero p { font-size: 1.1rem; }
+
+.path-grid,
+.metric-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin: 1rem 0 1.8rem;
+}
+
+.path-card,
+.metric-card {
+  border: 1px solid rgb(64 81 181 / 18%);
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 1rem rgb(17 26 58 / 6%);
+  padding: 1rem;
+}
+
+.path-card strong,
+.metric-card strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.case-badge {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+  padding: 0.25rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.verified-case { background: #dff7ef; color: #086653; }
+.composite-case { background: #fff0cf; color: #7a4b00; }
+
+.source-note {
+  border-left: 0.2rem solid var(--ard-teal);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.82rem;
+  padding-left: 0.8rem;
+}
+
+.md-typeset table:not([class]) th { background: rgb(64 81 181 / 9%); }
+.md-typeset .task-list-control { top: 0.12rem; }
+
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer, .md-content__button { display: none !important; }
+  .md-main__inner, .md-content { margin: 0; max-width: none; }
+  .hero { background: white; border: 2px solid #222; color: #111; }
+  .hero h1, .hero p { color: #111; }
+  a { color: #111; text-decoration: underline; }
+}
