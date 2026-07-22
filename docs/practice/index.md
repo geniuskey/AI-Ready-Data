@@ -26,6 +26,11 @@ review_due: 2027-01-23
 외부 AI에 올리지 않는다.
 :::
 
+<figure class="guide-illustration">
+  <img :src="'/AI-Ready-Data/images/illustrations/ai-ready-workshop.webp'" width="1200" height="676" loading="lazy" decoding="async" alt="현업·데이터·보안 담당자 네 명이 메일·문서·표를 Data Ready와 Knowledge Ready 두 작업 구역으로 나누어 승인 근거와 평가 자료를 만드는 실습 삽화">
+  <figcaption>실습은 문제 원천을 함께 보고 Data Ready, Knowledge Ready, 평가 증거로 차례로 바꾸는 협업 과정이다.</figcaption>
+</figure>
+
 <div class="lab-download-card">
   <div>
     <span>OFFLINE LAB PACK · UTF-8</span>
