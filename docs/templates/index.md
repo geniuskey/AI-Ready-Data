@@ -16,13 +16,13 @@ review_due: 2027-01-22
 하는 대화 도구다. 처음에는 유즈케이스 하나와 대표 원천만 기록하고 운영에서 발견한
 필드를 추가한다.
 
-| 시점 | 사용할 템플릿 | 결과 |
+| 준비축 | 사용할 템플릿 | 결과 |
 | --- | --- | --- |
-| 시작 | [준비도 진단표](readiness-assessment.md), [유즈케이스 캔버스](use-case-canvas.md) | 범위와 중단 조건 |
-| 발견 | [원천 인벤토리](source-inventory.md), [정보등급·권한표](access-matrix.md) | 승인된 데이터 경계 |
-| 기록 개선 | [문서 표준](document-standard.md), [회의록](meeting-minutes.md), [의사결정 로그](decision-log.md) | 새 지식의 품질 |
-| 정돈 | [용어사전](glossary-template.md), [SSoT·충돌대장](ssot-register.md), [품질 점수표](quality-scorecard.md) | 권위와 품질 근거 |
-| 파일럿 | [RAG 골든셋](rag-golden-set.md), [90일 백로그·RACI](roadmap-raci.md) | 평가와 책임 |
+| 시작 | [준비도 진단표](readiness-assessment.md), [유즈케이스 캔버스](use-case-canvas.md) | 범위와 두 게이트의 중단 조건 |
+| Data Ready | [원천 인벤토리](source-inventory.md), [정보등급·권한표](access-matrix.md), [품질 점수표](quality-scorecard.md) | 승인된 원천·접근·품질·계보 경계 |
+| Knowledge Ready | [문서 표준](document-standard.md), [회의록](meeting-minutes.md), [의사결정 로그](decision-log.md) | 정의·사실·규칙·결정을 잘 남기는 구조 |
+| Knowledge Ready | [용어사전](glossary-template.md), [SSoT·충돌대장](ssot-register.md) | 의미·권위·효력·충돌 근거 |
+| AI 활용 | [RAG 골든셋](rag-golden-set.md), [90일 백로그·RACI](roadmap-raci.md) | 평가·운영·책임 |
 
 ## 작성 규칙
 
@@ -34,4 +34,3 @@ review_due: 2027-01-22
 - AI가 초안을 채웠다면 원천 링크와 사람이 확인한 필드를 표시한다.
 
 CSV 예시는 UTF-8로 제공한다. Excel에서 열 때 인코딩과 날짜 자동 변환을 확인한다.
-

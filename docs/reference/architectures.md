@@ -25,15 +25,17 @@ flowchart TB
     DB[DB/업무시스템]
     AV[스캔/음성]
   end
-  subgraph ingest[수집·검역 구역]
+  subgraph ingest[Data Ready 구역]
     CONN[읽기 전용 커넥터]
     QUAR[악성·형식·오염 검역]
     PARSE[파싱·OCR·ASR]
-  end
-  subgraph curate[정제·승인 구역]
     RAW[불변 원본]
     META[정규화·메타데이터]
-    REVIEW[품질·SSoT 사람 검토]
+  end
+  subgraph curate[Knowledge Ready 구역]
+    TERM[용어·대상 정렬]
+    AUTH[SSoT·효력·충돌 판정]
+    KUNIT[지식 단위·근거·사람 승인]
   end
   subgraph serve[서비스 구역]
     SEARCH[키워드·벡터·ACL 검색]
@@ -41,7 +43,7 @@ flowchart TB
     APP[인용·거절·출력 통제]
   end
   sources --> CONN --> QUAR --> RAW
-  QUAR --> PARSE --> META --> REVIEW --> SEARCH
+  QUAR --> PARSE --> META --> TERM --> AUTH --> KUNIT --> SEARCH
   SEARCH --> APP
   LLM --> APP
   IAM[SSO/IAM] -.권한.-> CONN
@@ -129,4 +131,3 @@ flowchart TB
 
 아키텍처 선택 후 [온프레미스 보안](../02-govern/security.md)의 공격 시나리오와
 [RAG 골든셋](../templates/rag-golden-set.md)을 통과시킨다.
-

@@ -18,6 +18,16 @@ review_due: 2027-01-22
 [NIST 생성형 AI 프로파일](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)을
 조직 정책과 함께 적용한다.
 
+Data Ready 보안은 **원본과 파생 데이터의 수집·접근·보존·삭제**를 통제하고,
+Knowledge Ready 보안은 **정의·규칙·결정·관계에서 민감한 의미와 원천의 존재가
+노출되지 않도록** 통제한다. 같은 ACL을 쓰더라도 보호 대상과 실패 방식이 다르다.
+
+| 준비축 | 보호 대상 | 대표 실패 |
+| --- | --- | --- |
+| Data Ready | 원본·추출물·메타데이터·청크·임베딩 | 무단 수집, ACL 손실, 삭제 미전파 |
+| Knowledge Ready | 용어·사실·규칙·결정·관계·근거 링크 | 제한 사실 추론, 미승인 규칙 게시, 원천 존재 노출 |
+| AI 운영 | 질의·검색 결과·프롬프트·답변·캐시·로그 | 권한 우회, 프롬프트 인젝션, 교차 사용자 캐시 |
+
 ## 먼저 데이터 경로를 그린다
 
 ```mermaid

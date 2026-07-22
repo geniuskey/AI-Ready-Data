@@ -189,7 +189,7 @@
 
 .step-grid,
 .route-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 
 .path-grid,
@@ -257,6 +257,125 @@
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.05em;
+}
+
+.dual-ready-map {
+  align-items: stretch;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 0.82fr);
+  margin: 1rem 0 1.3rem;
+}
+
+.ready-pillar,
+.ready-outcome,
+.definition-panel {
+  border-radius: 0.85rem;
+  color: var(--vp-c-text-1) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.15rem;
+  text-decoration: none !important;
+}
+
+.ready-pillar,
+.definition-panel {
+  border: 1px solid var(--vp-c-divider);
+}
+
+.ready-pillar span,
+.ready-outcome span,
+.definition-panel span,
+.readiness-lane > span {
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+}
+
+.ready-pillar strong,
+.ready-outcome strong,
+.definition-panel strong,
+.readiness-lane strong {
+  display: block;
+  font-size: 1rem;
+  margin: 0.35rem 0;
+}
+
+.ready-pillar small,
+.ready-outcome small {
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+
+.ready-pillar.data-ready,
+.definition-panel.data-panel,
+.readiness-lane.data-lane {
+  background: color-mix(in srgb, var(--ard-indigo) 9%, var(--vp-c-bg));
+  border-color: color-mix(in srgb, var(--ard-indigo) 35%, var(--vp-c-divider));
+}
+
+.ready-pillar.data-ready span,
+.definition-panel.data-panel span,
+.readiness-lane.data-lane > span {
+  color: var(--ard-indigo);
+}
+
+.ready-pillar.knowledge-ready,
+.definition-panel.knowledge-panel,
+.readiness-lane.knowledge-lane {
+  background: color-mix(in srgb, var(--ard-teal) 9%, var(--vp-c-bg));
+  border-color: color-mix(in srgb, var(--ard-teal) 35%, var(--vp-c-divider));
+}
+
+.ready-pillar.knowledge-ready span,
+.definition-panel.knowledge-panel span,
+.readiness-lane.knowledge-lane > span {
+  color: var(--ard-teal);
+}
+
+.ready-outcome {
+  background: linear-gradient(135deg, var(--ard-navy), #293f82);
+  color: white !important;
+}
+
+.ready-outcome small {
+  color: rgb(255 255 255 / 75%);
+}
+
+.ready-outcome span {
+  color: #7fe1d5;
+}
+
+.ready-operator {
+  align-items: center;
+  color: var(--vp-c-text-3);
+  display: flex;
+  font-size: 1.35rem;
+  font-weight: 850;
+  justify-content: center;
+}
+
+.dual-definition,
+.readiness-lane-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1rem 0 1.6rem;
+}
+
+.definition-panel p,
+.readiness-lane p {
+  color: var(--vp-c-text-2);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.readiness-lane {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0.8rem;
+  padding: 1rem;
 }
 
 .timeline-strip {
@@ -654,7 +773,38 @@
 
 .score-controls {
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+
+.score-group {
+  border-left: 0.2rem solid var(--ard-indigo);
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 0.85rem;
+}
+
+.score-group[data-group="knowledge"] {
+  border-left-color: var(--ard-teal);
+}
+
+.score-group > header {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.score-group > header strong {
+  color: var(--ard-indigo);
+  font-size: 0.82rem;
+}
+
+.score-group[data-group="knowledge"] > header strong {
+  color: var(--ard-teal);
+}
+
+.score-group > header small {
+  color: var(--vp-c-text-3);
+  font-size: 0.68rem;
 }
 
 .score-control {
@@ -755,6 +905,51 @@
   color: var(--vp-c-text-3);
 }
 
+.lane-score-cards {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 0.55rem;
+}
+
+.lane-score-cards > div {
+  background: color-mix(in srgb, var(--ard-indigo) 9%, var(--vp-c-bg));
+  border-radius: 0.6rem;
+  padding: 0.7rem;
+}
+
+.lane-score-cards > div[data-group="knowledge"] {
+  background: color-mix(in srgb, var(--ard-teal) 10%, var(--vp-c-bg));
+}
+
+.lane-score-cards span,
+.lane-score-cards strong,
+.lane-score-cards small {
+  display: block;
+}
+
+.lane-score-cards span {
+  color: var(--vp-c-text-2);
+  font-size: 0.68rem;
+}
+
+.lane-score-cards strong {
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+.lane-score-cards small {
+  color: var(--vp-c-text-3);
+  font-size: 0.66rem;
+}
+
+.overall-score {
+  color: var(--vp-c-text-2);
+  font-size: 0.7rem;
+  margin: 0 0 0.8rem !important;
+  text-align: right;
+}
+
 .score-bars {
   display: grid;
   gap: 0.55rem;
@@ -771,6 +966,10 @@
 .score-bars b,
 .value-bars b {
   transition: width 180ms ease;
+}
+
+.score-bars > div[data-group="knowledge"] b {
+  background: linear-gradient(90deg, var(--ard-teal), #49b9a8);
 }
 
 .decision-text,
@@ -936,6 +1135,18 @@
 }
 
 @media (max-width: 960px) {
+  .dual-ready-map {
+    grid-template-columns: 1fr;
+  }
+
+  .ready-operator {
+    min-height: 1rem;
+  }
+
+  .ready-operator:nth-of-type(2)::after {
+    content: "";
+  }
+
   .tool-filters {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -959,6 +1170,12 @@
   .glossary-list,
   .input-grid,
   .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dual-definition,
+  .readiness-lane-grid,
+  .lane-score-cards {
     grid-template-columns: 1fr;
   }
 

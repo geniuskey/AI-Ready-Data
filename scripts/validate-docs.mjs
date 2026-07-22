@@ -26,6 +26,7 @@ const enums = {
 const caseTypes = new Set(['verified-case', 'composite-case'])
 const coreDocs = new Set([
   'index.md',
+  '00-start/what-is-ai-ready-data.md',
   '01-assess/readiness.md',
   '01-assess/business-impact.md',
   '01-assess/90-day-roadmap.md',
@@ -37,7 +38,11 @@ const coreDocs = new Set([
   '04-sources/edm-ssot.md',
   '05-pipeline/ingestion.md',
   '05-pipeline/rag-operations.md',
-  '06-cases/index.md'
+  '06-cases/index.md',
+  'data-ready/index.md',
+  'knowledge-ready/index.md',
+  'knowledge-ready/knowledge-units.md',
+  'ai-use/index.md'
 ])
 const linkPattern = /(?<!!)\[[^\]]+\]\(([^)]+)\)/g
 const secretPatterns = new Map([

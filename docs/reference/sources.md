@@ -21,7 +21,8 @@ review_due: 2026-10-22
 
 | 결정 | 먼저 볼 근거표 |
 | --- | --- |
-| 품질 기준·메타데이터·소유권 | [표준·품질·거버넌스](standards-governance.md) |
+| Data Ready 품질·메타데이터·계보 | [표준·품질·거버넌스](standards-governance.md) |
+| Knowledge Ready 용어·출처·승인 | [표준·품질·거버넌스](standards-governance.md) |
 | 외부 반출 금지·권한·개인정보 | [보안·개인정보](security-privacy.md) |
 | 메일·HWP·Office·PDF·회의·음성 | [비정형 문서·기록](unstructured-records.md) |
 | 검색·인용·골든셋·RAG 평가 | [RAG·검색·평가](rag-evaluation.md) |
