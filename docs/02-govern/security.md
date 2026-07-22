@@ -14,7 +14,7 @@ review_due: 2027-01-22
 
 온프레미스는 배치 위치이지 안전 판정이 아니다. 권한을 무시한 색인, 공용 캐시,
 패키지 업데이트, 원격 측정, 운영자 과권한, 오염 문서는 모두 사내에서도 사고를 낸다.
-[KISA 인공지능(AI) 보안 안내서](https://www.kisa.or.kr/2060204/form?lang_type=KO&page=2&postSeq=19)와
+[KISA 인공지능(AI) 보안 안내서 정오 수정본](https://www.kisa.or.kr/2060204/form?lang_type=KO&page=1&postSeq=19)과
 [NIST 생성형 AI 프로파일](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)을
 조직 정책과 함께 적용한다.
 
@@ -114,3 +114,5 @@ RAG에서 검색된 문서는 LLM의 컨텍스트에 들어간다. 문서에 “
 않으며, 개인정보 처리에는 최신 [국가법령정보센터 개인정보 보호법](https://www.law.go.kr/법령/개인정보보호법)과
 조직의 개인정보 보호책임자 검토를 우선한다.
 
+법·표준·공격별 원문과 적용 주의점은 [보안·개인정보 근거표](../reference/security-privacy.md)에서
+함께 확인한다.

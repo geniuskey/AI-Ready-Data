@@ -5,14 +5,18 @@
 
 ## 로컬 확인
 
+먼저 [공식 설치 가이드](https://docs.astral.sh/uv/getting-started/installation/)에 따라
+`uv`를 설치합니다. 저장소의 `.python-version`에 지정된 Python도 `uv`가 관리합니다.
+
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python scripts/validate_docs.py
-pymarkdown --config .pymarkdown.json scan docs README.md CONTRIBUTING.md
-mkdocs build --strict
+uv sync --locked
+uv run --locked python scripts/validate_docs.py
+uv run --locked pymarkdown --config .pymarkdown.json scan docs README.md CONTRIBUTING.md
+uv run --locked mkdocs build --strict
 ```
+
+Python 의존성을 바꿀 때는 `uv add <패키지>` 또는 `uv remove <패키지>`로
+`pyproject.toml`과 `uv.lock`을 함께 갱신합니다. 잠금 파일을 직접 편집하지 않습니다.
 
 ## 문서 계약
 

@@ -33,6 +33,7 @@ CASE_TYPES = {"verified-case", "composite-case"}
 CORE_DOCS = {
     "index.md",
     "01-assess/readiness.md",
+    "01-assess/business-impact.md",
     "01-assess/90-day-roadmap.md",
     "02-govern/governance.md",
     "02-govern/security.md",
